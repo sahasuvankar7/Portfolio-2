@@ -19,7 +19,7 @@ import nodemailer from 'nodemailer';
 //   }
 // }
 
-/*
+
 const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
@@ -46,9 +46,8 @@ export async function POST(req, res) {
     return NextResponse.json({ error });
   }
 }
-*/
 
-export async function POST( req){
-  const{email,subject, message} = await req.json();
-  const transporter = 
-}
+// export async function POST( req){
+//   const{email,subject, message} = await req.json();
+//   const transporter = 
+// }
