@@ -8,6 +8,8 @@ const projectdata = [
     imageUrl: "/images/project/Bankist.png",
     description:
       "Bankist is a banking application that allows users to transfer money, request a loan, and close their account.",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
   {
     id: 2,
@@ -15,6 +17,8 @@ const projectdata = [
     imageUrl: "/images/project/E-commerce.png",
     description:
       "E-Commerce is a shopping application that allows users to buy products, add products to cart, and checkout",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
   {
     id: 3,
@@ -22,6 +26,8 @@ const projectdata = [
     imageUrl: "/images/project/weather-app.png",
     description:
       "Weather is an application that allows users to check the weather of any city in the world.",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
   {
     id: 4,
@@ -29,6 +35,8 @@ const projectdata = [
     imageUrl: "/images/project/portfolio.png",
     description:
       "This is my portfolio website. It is a single page application that allows users to know more about me.",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
   {
     id: 5,
@@ -36,6 +44,8 @@ const projectdata = [
     imageUrl: "/images/project/github-finder.png",
     description:
       "Github Finder is an application that allows users to search for github users and view their profile.",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
   {
     id: 6,
@@ -43,6 +53,8 @@ const projectdata = [
     imageUrl: "/images/project/our-menu.png",
     description:
       "Menu is an application that allows users to search for food and drinks and view their details.",
+    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
   },
 ];
 
@@ -59,6 +71,8 @@ const Project = () => {
             title={project.title}
             description={project.description}
             imageUrl={project.imageUrl}
+            githubLink={project.githubLink}
+            preview={project.preview}
           />
         ))}
       </div>
