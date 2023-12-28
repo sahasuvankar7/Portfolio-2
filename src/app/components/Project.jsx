@@ -1,5 +1,7 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
+import { delay, motion, useInView } from "framer-motion";
 
 const projectdata = [
   {
@@ -59,24 +61,39 @@ const projectdata = [
 ];
 
 const Project = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const variants = {
+    initial: { opacity: 0, y: 100 },
+    animate: { opacity: 1, y: 0 },
+  };
   return (
-    <div>
+    <section id="#projects">
       <h2 className="text-center text-4xl font-bold text-white mt-4 mb-8 md:mb-12">
         My Projects
       </h2>
-      <div className="grid md:grid-cols-3 gap-8 md:gap-8">
-        {projectdata.map((project) => (
-          <ProjectCard
-            key={project.id}
-            title={project.title}
-            description={project.description}
-            imageUrl={project.imageUrl}
-            githubLink={project.githubLink}
-            preview={project.preview}
-          />
+      <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-8">
+        {projectdata.map((project, index) => (
+          <motion.li
+            variants={variants}
+            initial="initial"
+            animate={isInView ? "animate" : "initial"}
+            key={index}
+            transition={{ duration: 0.5, delay: index * 0.4 }}
+          >
+            <ProjectCard
+              key={project.id}
+              title={project.title}
+              description={project.description}
+              imageUrl={project.imageUrl}
+              githubLink={project.githubLink}
+              preview={project.preview}
+            />
+          </motion.li>
         ))}
-      </div>
-    </div>
+      </ul>
+    </section>
   );
 };
 

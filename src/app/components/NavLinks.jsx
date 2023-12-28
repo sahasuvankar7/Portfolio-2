@@ -1,15 +1,18 @@
 import React from "react";
-import Link from "next/link";
+import { Link as ScrollLink } from "react-scroll";
 
-export default function NavLinks({ href, title }) {
+export default function NavLinks({ href, title, setNavbarOpen }) {
   return (
-    <div>
-      <Link
-        href={href}
-        className="block py-2 pl-3 pr-4 text-[#ADB7BE] sm:text-xl rounded md:p-0 hover:text-white  "
-      >
-        {title}
-      </Link>
-    </div>
+    <ScrollLink
+      to={href}
+      spy={true}
+      smooth={true}
+      offset={-70}
+      duration={500}
+      className="text-slate-400 text-lg hover:text-gray-300 cursor-pointer"
+      onClick={() => setNavbarOpen && setNavbarOpen(false)}
+    >
+      {title}
+    </ScrollLink>
   );
 }

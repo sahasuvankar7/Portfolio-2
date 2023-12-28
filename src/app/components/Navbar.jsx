@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
 import { useState } from "react";
-import Link from "next/link";
-import NavLinks from "./NavLinks";
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll";
+import NavLink from "./NavLinks";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 import MenuOverly from "./MenuOverly";
 const navLinksdata = [
@@ -12,7 +12,7 @@ const navLinksdata = [
   },
   {
     title: "Skills",
-    path: "#Skills",
+    path: "#about",
   },
   {
     title: "Projects",
@@ -26,15 +26,23 @@ const navLinksdata = [
 
 export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = useState(false);
+  const scrollToTop = () => {
+    scroll.scrollToTop();
+  };
   return (
-    <nav className="fixed top-0 right-0 left-0 bg-[#121212] z-10 bg-opacity-100 ">
+    <nav className="fixed top-0 right-0 left-0 bg-[#121212] z-10 bg-opacity-100 border border-[#33353F]">
       <div className="flex flex-wrap  items-center justify-between mx-auto py-6 px-10">
-        <Link
-          href={"/"}
-          className="text-2xl md:text-4xl font-semibold text-white"
+        <ScrollLink
+          to="home"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="text-2xl md:text-4xl font-semibold text-white cursor-pointer"
+          onClick={scrollToTop}
         >
           suvankar
-        </Link>
+        </ScrollLink>
+
         <div className="mobile-menu block md:hidden">
           {!navbarOpen ? (
             <button
@@ -54,9 +62,13 @@ export default function Navbar() {
         </div>
         <div className="menu hidden md:block md:w-auto " id="navbar">
           <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8">
-            {navLinksdata.map((navLink, id) => (
+            {navLinksdata.map((link, id) => (
               <li key={id}>
-                <NavLinks href={navLink.path} title={navLink.title} />
+                <NavLink
+                  href={link.path}
+                  title={link.title}
+                  setNavbarOpen={setNavbarOpen}
+                />
               </li>
             ))}
           </ul>

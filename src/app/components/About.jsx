@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Tab from "./Tab";
 import { useTransition } from "react";
+import { motion, useInView } from "framer-motion";
 
 const Tabdata = [
   {
@@ -201,9 +202,23 @@ const About = () => {
       setActiveTab(id);
     });
   };
+
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+  const variants = {
+    initial: { opacity: 0, y: 100 },
+    animate: { opacity: 1, y: 0 },
+  };
   return (
-    <section className="text-white">
-      <div className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16">
+    <section className="text-white" id="#about">
+      <motion.div
+        ref={ref}
+        variants={variants}
+        initial="initial"
+        animate={isInView ? "animate" : "initial"}
+        transition={{ duration: 0.8 }}
+        className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+      >
         <Image
           src="/images/about-image.png"
           alt="about image"
@@ -250,7 +265,7 @@ const About = () => {
           </div>
           <div>{Tabdata.find((tab) => tab.id === activeTab).content}</div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

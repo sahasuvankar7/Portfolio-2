@@ -2,15 +2,21 @@
 import React from "react";
 import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
-    <section className="">
-      <div className="grid grid-cols-1 sm:grid-cols-12 ">
-        <div className="col-span-7 place-self-center text-center sm:text-left">
+    <section className="" id="#">
+      <div className="grid grid-cols-1 sm:grid-cols-12 md:pb-20 min-h-screen md:ml-14 ">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-7 place-self-center text-center sm:text-left"
+        >
           <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-500 via-purple-500 to-pink-600">
-              Hello, I am{" "}
+              Hello, I'm{" "}
             </span>
             <br />
             <TypeAnimation
@@ -46,18 +52,23 @@ export default function HeroSection() {
               </span>
             </button>
           </div>
-        </div>
-        <div className="col-span-5 place-self-center mt-10 lg:mt-0">
-          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] relative">
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5 }}
+          className="col-span-5 place-self-center mt-10 lg:mt-0"
+        >
+          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] relative md:mb-10">
             <Image
               src="/images/newHeroImg.png"
               alt="hero image"
               className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={240}
-              height={240}
+              width={230}
+              height={230}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
