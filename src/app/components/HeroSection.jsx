@@ -59,13 +59,13 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="col-span-5 place-self-center mt-10 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[320px] lg:h-[320px] relative md:mb-10">
+          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[300px] lg:h-[300px] relative md:mb-10 hidden sm:block">
             <Image
-              src="/images/newHeroImg.png"
+              src="/images/anime_boy1.jpeg"
               alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={230}
-              height={230}
+              className=" rounded-full absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+              width={450}
+              height={450}
             />
           </div>
         </motion.div>
