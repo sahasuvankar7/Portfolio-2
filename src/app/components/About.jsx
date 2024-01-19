@@ -1,10 +1,11 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import Image from "next/image";
 import { useState, useRef } from "react";
 import Tab from "./Tab";
 import { useTransition } from "react";
 import { motion, useInView } from "framer-motion";
+import Swiper from "swiper";
 
 const Tabdata = [
   {
@@ -209,6 +210,13 @@ const About = () => {
     initial: { opacity: 0, y: 100 },
     animate: { opacity: 1, y: 0 },
   };
+
+  // const swiper = new Swiper(".swiper-container", {
+  //   horizontal: true,
+  // });
+  // useEffect(() => {
+  //   swiper();
+  // },[])
   return (
     <section className="text-white" id="#about">
       <motion.div
@@ -227,7 +235,7 @@ const About = () => {
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-8">About Me</h2>
-          <p className="text-base lg:text-lg ">
+          <p className="text-base lg:text-lg  text-justify md:text-left">
             {" "}
             Hi, I am a Front End Developer with a passion for learning new
             things in technology. My main interest lies in Full Stack Web
@@ -235,7 +243,7 @@ const About = () => {
             enhance my skills. I have a strong love for coding and find it to be
             a rewarding and challenging career..
           </p>
-          <div className="flex flex-row mt-8">
+          <div className="swiper-container flex flex-row mt-8">
             {/* <span className="mr-3 font-semibold hover:text-white text-[#ADB7BE] border-b-4 border-purple-500">Skills</span> */}
             <Tab
               active={activeTab === "skills"}

@@ -5,9 +5,11 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 
 export default function HeroSection() {
+  const resume = "/resume.pdf";
+
   return (
     <section className="" id="#">
-      <div className="grid grid-cols-1 sm:grid-cols-12 md:pb-20 min-h-screen md:ml-14 ">
+      <div className="grid grid-cols-1 sm:grid-cols-12 sm:pb-4 md:pb-20 min-h-screen md:ml-14 ">
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -36,21 +38,24 @@ export default function HeroSection() {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#ABD7BE] mb-6 text-base sm:text-lg lg:text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. In odio
-            eius veniam, quibusdam nisi cum hic debitis sed rerum sunt, commodi,
-            voluptatum porro nam aut repellendus. Fuga provident impedit
-            delectus!
+          <p className="text-[#ABD7BE] mb-6 text-base sm:text-lg lg:text-xl text-justify md:text-left">
+            I am a learning front-end developer with a strong foundation in
+            programming and algorithmic problem-solving. I have a deep passion
+            for exploring various tools and frameworks in the world of web
+            development and am always on the lookout for new and innovative ways
+            to create beautiful and functional websites
           </p>
           <div>
             <button className="px-6 py-3 rounded-full mr-4 w-full sm:w-fit bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white">
-              Hire Me
+              <a href={resume} download="suvankarResume">
+                Download CV
+              </a>
             </button>
-            <button className="px-1 py-1 rounded-full mr-4 bg-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 w-full sm:w-fit mt-3 ">
+            {/* <button className="px-1 py-1 rounded-full mr-4 bg-transparent bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 w-full sm:w-fit mt-3 ">
               <span className="block bg-[#121212] rounded-full hover:bg-slate-800 px-5 py-2">
                 Download CV
               </span>
-            </button>
+            </button> */}
           </div>
         </motion.div>
         <motion.div
@@ -59,7 +64,7 @@ export default function HeroSection() {
           transition={{ duration: 0.5 }}
           className="col-span-5 place-self-center mt-10 lg:mt-0"
         >
-          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[300px] lg:h-[300px] relative md:mb-10 hidden sm:block">
+          <div className="rounded-full bg-[#181818] w-[280px] h-[280px] lg:w-[300px] lg:h-[300px] relative sm:mb-4 md:mb-10 hidden sm:block">
             <Image
               src="/images/anime_boy1.jpeg"
               alt="hero image"

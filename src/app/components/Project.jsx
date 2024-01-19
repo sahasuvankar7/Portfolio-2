@@ -2,6 +2,8 @@
 import React, { useRef } from "react";
 import ProjectCard from "./ProjectCard";
 import { delay, motion, useInView } from "framer-motion";
+import { Link } from "react-scroll";
+// import Link from "next/link";
 
 const projectdata = [
   {
@@ -10,8 +12,8 @@ const projectdata = [
     imageUrl: "/images/project/Bankist.png",
     description:
       "Bankist is a banking application that allows users to transfer money, request a loan, and close their account.",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
+    githubLink: "https://github.com/sahasuvankar7/Bankist_Application",
+    preview: "bankist-application-cr7.vercel.app/",
   },
   {
     id: 2,
@@ -19,45 +21,45 @@ const projectdata = [
     imageUrl: "/images/project/E-commerce.png",
     description:
       "E-Commerce is a shopping application that allows users to buy products, add products to cart, and checkout",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
+    githubLink: "https://github.com/Swastikdan/E-Commerce-Django",
+    preview: "swastikpyprojects.pythonanywhere.com/",
   },
-  {
-    id: 3,
-    title: "Weather Application",
-    imageUrl: "/images/project/weather-app.png",
-    description:
-      "Weather is an application that allows users to check the weather of any city in the world.",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
-  },
+  // {
+  //   id: 3,
+  //   title: "Weather Application",
+  //   imageUrl: "/images/project/weather-app.png",
+  //   description:
+  //     "Weather is an application that allows users to check the weather of any city in the world.",
+  //   githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+  //   preview: "",
+  // },
   {
     id: 4,
     title: "Portfolio Application",
     imageUrl: "/images/project/portfolio.png",
     description:
       "This is my portfolio website. It is a single page application that allows users to know more about me.",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
+    githubLink: "https://github.com/sahasuvankar7/My_Portfolio",
+    preview: "suvankarsaha.vercel.app/",
   },
-  {
-    id: 5,
-    title: "Github Finder Application",
-    imageUrl: "/images/project/github-finder.png",
-    description:
-      "Github Finder is an application that allows users to search for github users and view their profile.",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
-  },
-  {
-    id: 6,
-    title: "Menu Application",
-    imageUrl: "/images/project/our-menu.png",
-    description:
-      "Menu is an application that allows users to search for food and drinks and view their details.",
-    githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
-    preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
-  },
+  // {
+  //   id: 5,
+  //   title: "Github Finder Application",
+  //   imageUrl: "/images/project/github-finder.png",
+  //   description:
+  //     "Github Finder is an application that allows users to search for github users and view their profile.",
+  //   githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+  //   preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
+  // },
+  // {
+  //   id: 6,
+  //   title: "Menu Application",
+  //   imageUrl: "/images/project/our-menu.png",
+  //   description:
+  //     "Menu is an application that allows users to search for food and drinks and view their details.",
+  //   githubLink: "https://github.com/sahasuvankar7/Github_Users_Finder",
+  //   preview: "https://i.ebayimg.com/images/g/SsYAAOSw8QdkqOAP/s-l1200.jpg",
+  // },
 ];
 
 const Project = () => {
@@ -93,6 +95,13 @@ const Project = () => {
           </motion.li>
         ))}
       </ul>
+      <div className="text-center my-14 w-full">
+        <a href="https://github.com/sahasuvankar7" target="_blank" rel="noopener noreferrer">
+          <button className="px-8 py-3 rounded-full mr-4 w-2/3 md:w-2/12  bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 text-white">
+            More
+          </button>
+        </a>
+      </div>
     </section>
   );
 };
