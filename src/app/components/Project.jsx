@@ -13,7 +13,7 @@ const projectdata = [
     description:
       "Bankist is a banking application that allows users to transfer money, request a loan, and close their account.",
     githubLink: "https://github.com/sahasuvankar7/Bankist_Application",
-    preview: "bankist-application-cr7.vercel.app/",
+    preview: "https://bankist-application-cr7.vercel.app/",
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ const projectdata = [
     description:
       "E-Commerce is a shopping application that allows users to buy products, add products to cart, and checkout",
     githubLink: "https://github.com/Swastikdan/E-Commerce-Django",
-    preview: "swastikpyprojects.pythonanywhere.com/",
+    preview: "https://swastikpyprojects.pythonanywhere.com/",
   },
   // {
   //   id: 3,
@@ -40,7 +40,7 @@ const projectdata = [
     description:
       "This is my portfolio website. It is a single page application that allows users to know more about me.",
     githubLink: "https://github.com/sahasuvankar7/My_Portfolio",
-    preview: "suvankarsaha.vercel.app/",
+    preview: "https://suvankarsaha.vercel.app/",
   },
   // {
   //   id: 5,
