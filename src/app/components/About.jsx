@@ -225,7 +225,7 @@ const About = () => {
         initial="initial"
         animate={isInView ? "animate" : "initial"}
         transition={{ duration: 0.8 }}
-        className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+        className="md:grid md:grid-cols-2 gap-8 items-center py-2 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
         <Image
           src="/images/about-image.png"
@@ -235,7 +235,7 @@ const About = () => {
         />
         <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-8">About Me</h2>
-          <p className="text-base lg:text-lg  text-justify md:text-left">
+          <p className="text-base lg:text-lg  text-left">
             {" "}
             Hi, I am a Front End Developer with a passion for learning new
             things in technology. My main interest lies in Full Stack Web
